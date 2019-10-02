@@ -10,19 +10,29 @@ public class InputAndOutput {
         this.language = new Language(!isGerman);
     }
 
-    public String getLanguage() {
-        System.out.println("Please input your language\n" +
-                "for English type e\n" +
-                "for German g");
+    private String getString() {
         Scanner input = new Scanner(System.in);
         String result = input.next();
         input.close();
         return result;
     }
 
-    // Print the current board
-
-    // get input
-
     //
+    // Print the current board
+    // get input
+    public int getNextMove() {
+        System.out.println("Please input your next move\n" +
+                "use only number from 0-8.");
+        String result = getString();
+        return Integer.parseInt(result);
+    }
+
+    public String getLanguage() {
+        System.out.println("Please input your language\n" +
+                "for English type e\n" +
+                "for German g");
+        return getString();
+    }
+
+
 }

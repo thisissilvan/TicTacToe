@@ -4,8 +4,6 @@ public class Logic {
     public void startGame() {
         // init. a new board
 
-        // get language input
-
         // create new players
 
 
