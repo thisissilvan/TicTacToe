@@ -1,6 +1,10 @@
 public class Language {
     private boolean languageEnglish;
 
+    public Language(boolean languageEnglish) {
+        this.languageEnglish = languageEnglish;
+    }
+
     // display welcome Message
 
     // set language

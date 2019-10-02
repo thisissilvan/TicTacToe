@@ -1,4 +1,6 @@
 public class Logic {
+    private InputAndOutput io = new InputAndOutput();
+
     public void startGame() {
         // init. a new board
 
