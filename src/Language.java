@@ -28,4 +28,14 @@ public class Language {
         return message
     }
 
+    // custom message for a invalid input
+    public String invalidInputMessage(){
+        String message;
+        if(languageEnglish){
+            message = "Please give a valid input."
+        }else{
+            message = "Bitte geben Sie eine gültige Eingabe."
+        }
+        return message
+    }
 }
