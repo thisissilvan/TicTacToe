@@ -15,7 +15,6 @@ public class Board {
      *
      * Sobald ein Spielzug gespielt wird, soll der Inhalt des Feldes überschrieben werden.
      *
-     * @param ArrayList mit den Feldern 0 - 8
      */
 
     public Board()
