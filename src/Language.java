@@ -38,4 +38,16 @@ public class Language {
         }
         return message
     }
+
+    // custom message for game restart
+    public String outcomeDrawMessage(){
+        String message;
+        if(languageEnglish){
+            message = "The game has ended, would you like to continue playing? No [1] Yes [0]"
+        }else{
+            message = "Das Spiel ist zu ende, möchten Sie weiter spielen? Nein [1] Ja [0]"
+        }
+        return message
+    }
+
 }
