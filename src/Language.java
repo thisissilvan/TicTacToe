@@ -17,5 +17,15 @@ public class Language {
         return message
     }
 
+    // custom message for a draw
+    public String outcomeDrawMessage(){
+        String message;
+        if(languageEnglish){
+            message = "This game ends in a draw."
+        }else{
+            message = "Dieses Spiel endet mit einem Unentschieden."
+        }
+        return message
+    }
 
 }
