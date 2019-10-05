@@ -1,20 +1,10 @@
 public class Language {
     private boolean languageEnglish;
 
-    // display welcome Message
-
-    // set language
-
-    // custom message for wining/losing and draw
-
-    // display message for invalid input
-
-    // display message for full board
-
-    // display message for game start
-
-
-
+    // display welcome message to choose language
+    public String setLanguageMessage(){
+        String message = "Willkommen! Bitte geben Sie [1] ein für Deutsch. Welcome! Please enter [0] for english.";
+    }
 
 
 }
