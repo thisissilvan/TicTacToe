@@ -52,7 +52,7 @@ public class Language {
         return message
     }
 
-    public String outcomeDrawMessage(){
+    public String gameEndMessage(){
         String message;
         if(languageEnglish){
             message = "The game has ended, would you like to continue playing? No [1] Yes [0]"
