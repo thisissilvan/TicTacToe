@@ -1,56 +1,65 @@
 package src;
 
+import javax.swing.*;
+
 public class Logic {
+    private int newPosition;
+    private int symbol;
 
-
-    public void startGame() {
-        // init. a new board
+    private void startGame() {
         Board board = new Board();
-
-        // get language input
         Language language = new Language();
+        InputAndOutput input = new InputAndOutput();
 
-        // create new players
-        Player x = new Player();
-        Player o = new Player();
-        //initialize inputandoutput
-
-        // play game
         playGame();
-
-        // show game results
     }
 
     private void playGame() {
     int x = 11;
     int o = 22;
-    int symbol = x;
-        //method to print the empty board (from class InputAndOutput or from class Board
+    symbol = x;
 
+        board.printBoard();
         while (!boardIsFull() || !gameWon()) {
 
             language.turnChangesMessage();
-            int newPosition = scanner.nextInt();
+            newPosition = input.getNextMove();
 
             if(illegalEntry(newPosition))
-                language.illegalMove();
+                language.invalidInputMessage();
             else {
-                updateBoard(newPosition, symbol);
-                printBoard();
+                board.updateBoard(newPosition, symbol);
+                board.printBoard();
+                changeSymbol(symbol);
             }
         }
-        //if(game won) do print: x.name hat gewonnen
-        //else print Game over.
 
+        if(gameWon())
+            language.outcomeWinMessage();
+        else
+            language.outcomeDrawMessage();
+
+        language.gameEndMessage();
 
         }
-     public boolean illegalEntry(int newPosition){
+     private boolean illegalEntry(int newPosition){
         if(newPosition > 8 || (board.get(newPosition) < 0 && (board.get(newPosition) > 8))
             return true;
      }
 
+     private boolean gameWon(){
+        if(board.get(0) == board.get(1) == board.get(2) || board.get(3) == board.get(4) == board.get(5) || board.get(6) == board.get(7) == board.get(8)
+                || board.get(0) == board.get(3) == board.get(6) || board.get(1) == board.get(4) == board.get(7) || board.get(2) == board.get(5) == board.get(8)
+                || board.get(0) == board.get(4) == board.get(8) || board.get(2) == board.get(4) == board.get(6) )
+        return true;
+     }
 
-
-
-    }
+     private void changeSymbol(int currentSymbol){
+        int otherSymbol;
+        if(symbol == x)
+            symbol = o;
+        else
+            symbol = x;
+     }
+}
 
