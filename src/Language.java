@@ -2,16 +2,23 @@
  * Diese Klasse beinhalted alle Nachrichten, die nachher an die Klasse InputAndOutput weitergereicht werden.
  * Jede Nachricht ist in den Sprachen Deutsch und Englisch definiert für verschiedene Szenarien.
  * Am anfang wird durch die Klasse Logic der Boolean languageEnglish gesetzt, der nacher dafür sorgt,
- * dass alle Nachrichten in der gewünschten Sprache ausgegeben werden.
+ * dass alle Nachrichten in der gewünschten Sprache ausgegeben werden. Falls der Wert vom boolean true ist,
+ * wird die Sprache auf Englisch gesetzt und bei false ist sie Deutsch.
  */
 
 public class Language {
     private boolean languageEnglish;
 
+    /**
+     * Diese Methode wird am Anfang des Spiels aufgerufen umd nach dem Sprachwunsch des Benutzers zufragen.
+     */
     public String setLanguageMessage(){
         String message = "Willkommen! Bitte geben Sie [1] ein für Deutsch. Welcome! Please enter [0] for english.";
     }
 
+    /**
+     * Diese Methode gibt zurück, dass der nächste Spieler dran ist.
+     */
     public String turnChangesMessage(){
         String message;
         if(languageEnglish){
@@ -22,6 +29,9 @@ public class Language {
         return message
     }
 
+    /**
+     * Je nach Booleanwert gibt diese Methode eine Gewinn-Message auf Deutsch oder Englisch zurück.
+     */
     public String outcomeWinMessage(){
         String message;
         if(languageEnglish){
@@ -32,6 +42,9 @@ public class Language {
         return message
     }
 
+    /**
+     * Diese Methode gibt eine Message zurück, in Deutsch oder Englisch, im Falle eines Gleichstands.
+     */
     public String outcomeDrawMessage(){
         String message;
         if(languageEnglish){
@@ -42,6 +55,9 @@ public class Language {
         return message
     }
 
+    /**
+     * Falls ein ungültiger Wert eingegeben wird vom Benutzer, wird diese Nachricht zurückgegeben.
+     */
     public String invalidInputMessage(){
         String message;
         if(languageEnglish){
@@ -51,7 +67,9 @@ public class Language {
         }
         return message
     }
-
+    /**
+     * Am Ende des Spiels fragt diese Methode, ob ein neues gestarted werden soll.
+     */
     public String gameEndMessage(){
         String message;
         if(languageEnglish){
