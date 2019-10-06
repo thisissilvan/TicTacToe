@@ -52,6 +52,8 @@ public class Logic {
                 || board.get(0) == board.get(3) == board.get(6) || board.get(1) == board.get(4) == board.get(7) || board.get(2) == board.get(5) == board.get(8)
                 || board.get(0) == board.get(4) == board.get(8) || board.get(2) == board.get(4) == board.get(6) )
         return true;
+        else
+            return false;
      }
 
      private void changeSymbol(int currentSymbol){
