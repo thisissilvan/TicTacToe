@@ -19,9 +19,9 @@ public class Language {
     public String turnChangesMessage(){
         String message;
         if(languageEnglish){
-            message = "It is your turn."
+            message = "Please switch player."
         }else{
-            message = "Sie sind am Zug."
+            message = "Bitte Spieler wechseln."
         }
         return message
     }
