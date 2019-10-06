@@ -1,10 +1,16 @@
 import java.util.ArrayList;
 
-
+/**
+ * Die Klasse Board stellt das Spielfeld zur Verfügung. Hier sind alle relevanten Methoden untergebracht um das
+ * Spielfeld zu modellieren.
+ *
+ * @author Silvan Luethy
+ * @version 2019_10_06
+ */
 public class Board {
 
     private InputAndOutput player = new InputAndOutput;
-    private ArrayList<Integer> cells = new ArrayList<>();
+    private List<Integer> cells = new ArrayList<>();
 
     /**
      * Der Konstruktor Board erstellt ein Spielfeld und füllt die Felder mit der
@@ -16,7 +22,6 @@ public class Board {
      * Sobald ein Spielzug gespielt wird, soll der Inhalt des Feldes überschrieben werden.
      *
      */
-
     public Board()
     {
         cells.add(0);
@@ -28,6 +33,49 @@ public class Board {
         cells.add(6);
         cells.add(7);
         cells.add(8);
+    }
+
+    /**
+     * Getter Methode der Klasse Board.
+     * @return
+     */
+    public List<Integer> getCells()
+    {
+        return cells;
+    }
+
+    /**
+     * Setter Methode der Klasse Board.
+     * @param cells
+     */
+    public void setCells(List<Integer> cells)
+    {
+        this.cells = cells;
+    }
+
+    /**
+     * Diese Methode gibt die Felder als ArrayList zurück.
+     * @return ArrayList
+     */
+    public ArrayList<Integer> getField()
+    {
+        return cells;
+    }
+
+    /**
+     * Die Methode output produziert einen output-String, welcher das Spielfeld darstellt.
+     */
+    public void output()
+    {
+        String output =
+        " |----|----|----|\n" +
+        " |  " + cells.get(0) + " | " + cells.get(1) + "  | " + cells.get(2) + "  |   \n" +
+        " |____|____|____|\n" +
+        " |  " + cells.get(3) + " | " + cells.get(4) + "  | " + cells.get(5) + "  |   \n" +
+        " |____|____|____|\n" +
+        " |  " + cells.get(6) + " | " + cells.get(7) + "  | " + cells.get(8) + "  |   \n" +
+        " |____|____|____|");
+
     }
 
     /**
@@ -49,31 +97,19 @@ public class Board {
     }
 
     /**
-     * Beim Aufrufen dieser Methode wird das Spielfeld ausgegeben. Ebenso wird
-     * die play Methode aus der Klasse InputAndOutput aufgerufen, mit welcher die
-     * Variabeln für den Spielzug via Scanner-Input entgegengenommen werden.
+     * Diese Methode führt ein Update aus und gibt den aktuellen Spielstand auf der Konsole aus.
      */
-    public void play()
+    public void updateBoard(int position, int zeichen)
     {
-        printBoard();
-        player.play();
+      cells.set(position, zeichen);
     }
 
-
     /**
-     * Mit der Methode printBoard kann der aktuelle Spielstand auf die Konsole ausgegeben werden.
+     * Diese Methode gibt den aktuellen Spielstand auf der Konsole aus.
      */
-    public void printBoard()
+    public void prinBoard()
     {
-        System.out.println();
-        System.out.println(" |----|----|----|");
-        System.out.println(" |  " + cells.get(0) + " | " + cells.get(1) + "  | " + cells.get(2) + "  |   ");
-        System.out.println(" |____|____|____|");
-        System.out.println(" |  " + cells.get(3) + " | " + cells.get(4) + "  | " + cells.get(5) + "  |   ");
-        System.out.println(" |____|____|____|");
-        System.out.println(" |  " + cells.get(6) + " | " + cells.get(7) + "  | " + cells.get(8) + "  |   ");
-        System.out.println(" |____|____|____|");
-
+        output();
     }
 
 }
