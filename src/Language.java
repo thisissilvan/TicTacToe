@@ -1,6 +1,9 @@
 /**
  * Diese Klasse beinhalted alle Nachrichten, die nachher an die Klasse InputAndOutput weitergereicht werden.
- * Jede Nachricht ist in den Sprachen Deutsch und Englisch definiert.
+ * Jede Nachricht ist in den Sprachen Deutsch und Englisch definiert für verschiedene Szenarien.
+ * Am anfang wird durch die Klasse Logic der Boolean languageEnglish gesetzt, der nacher dafür sorgt,
+ * dass alle Nachrichten in der gewünschten Sprache ausgegeben werden. Falls der Wert vom boolean true ist,
+ * wird die Sprache auf Englisch gesetzt und bei false ist sie Deutsch.
  */
 
 public class Language {
@@ -14,7 +17,7 @@ public class Language {
     }
 
     /**
-     * Diese Methode sagt welcher Spieler am Zug ist.
+     * Diese Methode gibt zurück, dass der nächste Spieler dran ist.
      */
     public String turnChangesMessage(){
         String message;
@@ -38,6 +41,7 @@ public class Language {
         }
         return message
     }
+
     /**
      * Diese Methode gibt eine Message zurück, in Deutsch oder Englisch, im Falle eines Gleichstands.
      */
@@ -52,7 +56,7 @@ public class Language {
     }
 
     /**
-     * Falls ein ungültiger Wert eingegeben wird vom Benutzer, wird diese Nachricht ausgegeben.
+     * Falls ein ungültiger Wert eingegeben wird vom Benutzer, wird diese Nachricht zurückgegeben.
      */
     public String invalidInputMessage(){
         String message;
@@ -63,11 +67,10 @@ public class Language {
         }
         return message
     }
-
     /**
      * Am Ende des Spiels fragt diese Methode, ob ein neues gestarted werden soll.
      */
-    public String outcomeDrawMessage(){
+    public String gameEndMessage(){
         String message;
         if(languageEnglish){
             message = "The game has ended, would you like to continue playing? No [1] Yes [0]"
