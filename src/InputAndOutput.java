@@ -5,9 +5,10 @@ public class InputAndOutput {
 
     public InputAndOutput() {
         String language = getLanguage();
-        boolean isGerman = "g".equals(language);
+        boolean isGerman = "1".equals(language);
 
-        this.language = new Language(!isGerman);
+        this.language = new Language();
+        this.language.setLanguageEnglish(!isGerman);
     }
 
     private String getString() {
@@ -17,10 +18,8 @@ public class InputAndOutput {
         return result;
     }
 
-    //
-    // Print the current board
-    // get input
     public int getNextMove() {
+        // TODO: use method in Language class here
         System.out.println("Please input your next move\n" +
                 "use only number from 0-8.");
         String result = getString();
@@ -28,9 +27,7 @@ public class InputAndOutput {
     }
 
     public String getLanguage() {
-        System.out.println("Please input your language\n" +
-                "for English type e\n" +
-                "for German g");
+        System.out.println(language.setLanguageMessage());
         return getString();
     }
 
