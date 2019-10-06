@@ -1,3 +1,5 @@
+package src;
+
 public class Logic {
 
 
@@ -20,30 +22,34 @@ public class Logic {
     }
 
     private void playGame() {
-
-
+    int x = 11;
+    int o = 22;
+    int symbol = x;
         //method to print the empty board (from class InputAndOutput or from class Board
-        (if isEnglish()){
-            while (!boardIsFull() || !gameWon()) {
-                //either method from InputAndOutput that says players should switch or I do:
-                System.out.println(x.name + ", it is your turn."); //muss das noch ausbauen
-                int neuePosition = scanner.nextInt();
 
-                //if(illegalEntry) do print: illegal entry, pls do another entry
-                //else updateBoard(neuePosition) and print board
+        while (!boardIsFull() || !gameWon()) {
 
+            language.turnChangesMessage();
+            int newPosition = scanner.nextInt();
+
+            if(illegalEntry(newPosition))
+                language.illegalMove();
+            else {
+                updateBoard(newPosition, symbol);
+                printBoard();
             }
-            //if(game won) do print: x.name hat gewonnen
-            //else print Game over.
-        }else{
-            //the same block, just in German
         }
+        //if(game won) do print: x.name hat gewonnen
+        //else print Game over.
 
 
         }
-     public void illegalEntry(){
-
+     public boolean illegalEntry(int newPosition){
+        if(newPosition > 8 || (board.get(newPosition) < 0 && (board.get(newPosition) > 8))
+            return true;
      }
+
+
 
 
     }
