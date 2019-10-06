@@ -81,4 +81,7 @@ public class Language {
         return message;
     }
 
+    public void setLanguageEnglish(boolean languageEnglish) {
+        this.languageEnglish = languageEnglish;
+    }
 }
