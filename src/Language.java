@@ -14,6 +14,19 @@ public class Language {
     }
 
     /**
+     * Diese Methode sagt welcher Spieler am Zug ist.
+     */
+    public String turnChangesMessage(){
+        String message;
+        if(languageEnglish){
+            message = "It is your turn."
+        }else{
+            message = "Sie sind am Zug."
+        }
+        return message
+    }
+
+    /**
      * Je nach Booleanwert gibt diese Methode eine Gewinn-Message auf Deutsch oder Englisch zurück.
      */
     public String outcomeWinMessage(){
