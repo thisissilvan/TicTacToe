@@ -19,7 +19,8 @@ public class Board {
      * Ein Feld besteht aus 9 leeren Feldern. Der Einfachheit halber haben die Felder
      * denselben Namen wie die jeweiligen Indexe der ArrayList.
      *
-     * Sobald ein Spielzug gespielt wird, soll der Inhalt des Feldes überschrieben werden.
+     * Sobald ein Spielzug gespielt wird, soll der Inhalt des Feldes mit der Bezeichnung des aktuellen Spielers,
+     * der aktuellen Spielerin überschrieben werden.
      *
      */
     public Board()
@@ -37,7 +38,7 @@ public class Board {
 
     /**
      * Getter Methode der Klasse Board.
-     * @return
+     * @return cells
      */
     public List<Integer> getCells()
     {
@@ -65,7 +66,7 @@ public class Board {
     /**
      * Die Methode output produziert einen output-String, welcher das Spielfeld darstellt.
      */
-    public void output()
+    public void createOutputString()
     {
         String output =
         " |----|----|----|\n" +
@@ -97,19 +98,22 @@ public class Board {
     }
 
     /**
-     * Diese Methode führt ein Update aus und gibt den aktuellen Spielstand auf der Konsole aus.
+     * Mit dieser Methode kann das Spielfeld aktuelisiert werden.
+     *
+     * Es muss die ursprüngliche Position und das zu spielende Zeichen angegeben werden. Mit updateBoard
+     * wird in der ArrayList das alte Zeichen gesucht und durch das zu spielende Zeichen ersetzt.
      */
     public void updateBoard(int position, int zeichen)
     {
-      cells.set(position, zeichen);
+        cells.set(position, zeichen);
     }
 
     /**
      * Diese Methode gibt den aktuellen Spielstand auf der Konsole aus.
      */
-    public void prinBoard()
+    public void printBoard()
     {
-        output();
+        System.out.println(output());
     }
 
 }
