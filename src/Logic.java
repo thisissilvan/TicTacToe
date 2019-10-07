@@ -46,7 +46,13 @@ public class Logic {
             System.out.println(language.outcomeDrawMessage());
 
         System.out.println(language.gameEndMessage());
+
+        if(input.getNextGame() == 0)
+            startGame();
+        else
+            System.out.println(language.thankYouMessage());
     }
+
 
     private boolean illegalEntry(int newPosition) {
         List<Integer> cells = board.getCells();
