@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Die Klasse Board stellt das Spielfeld zur Verfügung. Hier sind alle relevanten Methoden untergebracht um das
@@ -9,7 +10,7 @@ import java.util.ArrayList;
  */
 public class Board {
 
-    private InputAndOutput player = new InputAndOutput;
+    private InputAndOutput player = new InputAndOutput();
     private List<Integer> cells = new ArrayList<>();
 
     /**
@@ -52,7 +53,7 @@ public class Board {
      * Diese Methode gibt die Felder als ArrayList zurück.
      * @return ArrayList
      */
-    public ArrayList<Integer> getField()
+    public List<Integer> getField()
     {
         return cells;
     }
@@ -60,7 +61,7 @@ public class Board {
     /**
      * Die Methode output produziert einen output-String, welcher das Spielfeld darstellt.
      */
-    public void createOutputString()
+    public String createOutputString()
     {
         String output =
         " |----|----|----|\n" +
@@ -69,8 +70,9 @@ public class Board {
         " |  " + cells.get(3) + " | " + cells.get(4) + "  | " + cells.get(5) + "  |   \n" +
         " |____|____|____|\n" +
         " |  " + cells.get(6) + " | " + cells.get(7) + "  | " + cells.get(8) + "  |   \n" +
-        " |____|____|____|");
+        " |____|____|____|";
 
+        return output;
     }
 
     /**
@@ -107,7 +109,7 @@ public class Board {
      */
     public void printBoard()
     {
-        System.out.println(output());
+        System.out.println(createOutputString());
     }
 
 }

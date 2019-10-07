@@ -5,7 +5,6 @@ public class InputAndOutput {
     private String getString() {
         Scanner input = new Scanner(System.in);
         String result = input.next();
-        input.close();
         return result;
     }
 
