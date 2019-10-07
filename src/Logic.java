@@ -25,18 +25,17 @@ public class Logic {
         board.printBoard();
         while (!board.boardIsFull() || !gameWon()) {
 
-            System.out.println(language.turnChangesMessage());
             int newPosition = input.getNextMove(language.getNextMoveMessage());
 
-            if (illegalEntry(newPosition))
-                // TODO: add check if cell already has a symbol in it
-                // TODO: when there is an illegal entry OR the cell already has content, repeat input for same player
+            do{
                 System.out.println(language.invalidInputMessage());
-            else {
-                board.updateBoard(newPosition, symbol);
-                board.printBoard();
-                changeSymbol(symbol);
-            }
+            } while(illegalEntry(newPosition));
+
+            board.updateBoard(newPosition, symbol);
+            board.printBoard();
+            changeSymbol(symbol);
+
+            System.out.println(language.turnChangesMessage());
         }
 
         if (gameWon())
@@ -44,9 +43,7 @@ public class Logic {
         else
             System.out.println(language.outcomeDrawMessage());
 
-
         System.out.println(language.gameEndMessage());
-
     }
 
     private boolean illegalEntry(int newPosition) {
