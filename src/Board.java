@@ -62,11 +62,11 @@ public class Board {
         String output =
 
                 " |----|----|----|\n" +
-                        " |  " + cells.get(0) + " | " + cells.get(1) + "  | " + cells.get(2) + "  |   \n" +
+                        " | " + cells.get(0) + " | " + cells.get(1) + " | " + cells.get(2) + " |   \n" +
                         " |____|____|____|\n" +
-                        " |  " + cells.get(3) + " | " + cells.get(4) + "  | " + cells.get(5) + "  |   \n" +
+                        " | " + cells.get(3) + " | " + cells.get(4) + " | " + cells.get(5) + " |   \n" +
                         " |____|____|____|\n" +
-                        " |  " + cells.get(6) + " | " + cells.get(7) + "  | " + cells.get(8) + "  |   \n" +
+                        " | " + cells.get(6) + " | " + cells.get(7) + " | " + cells.get(8) + " |   \n" +
                         " |____|____|____|";
 
 
