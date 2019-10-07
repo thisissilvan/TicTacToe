@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Die Klasse Board stellt das Spielfeld zur Verfügung. Hier sind alle relevanten Methoden untergebracht um das
@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class Board {
 
     private InputAndOutput player = new InputAndOutput;
-    private List<Integer> cells = new ArrayList<>();
+    private List<Integer>;
 
     /**
      * Der Konstruktor Board erstellt ein Spielfeld und füllt die Felder mit der
@@ -25,6 +25,7 @@ public class Board {
      */
     public Board()
     {
+       cells = new ArrayList<>();
        initialiseBoard();
     }
 
