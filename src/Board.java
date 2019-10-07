@@ -5,7 +5,7 @@ import java.util.ArrayList;
  * Spielfeld zu modellieren.
  *
  * @author Silvan Luethy
- * @version 2019_10_06
+ * @version 2019_10_07
  */
 public class Board {
 
@@ -25,33 +25,28 @@ public class Board {
      */
     public Board()
     {
+       initialiseBoard();
+    }
+
+    /**
+     * Mit dieser Methode wird ein neues Spielfeld initialisiert.
+     */
+    public void initialiseBoard()
+    {
         for (int i = 0; i <= 8; i++) {
             cells.add(i);
         }
     }
-
-    /**
-     * Getter Methode der Klasse Board.
-     * @return cells
-     */
     public List<Integer> getCells()
     {
         return cells;
     }
 
-    /**
-     * Setter Methode der Klasse Board.
-     * @param cells
-     */
     public void setCells(List<Integer> cells)
     {
         this.cells = cells;
     }
 
-    /**
-     * Diese Methode gibt die Felder als ArrayList zurück.
-     * @return ArrayList
-     */
     public ArrayList<Integer> getField()
     {
         return cells;
