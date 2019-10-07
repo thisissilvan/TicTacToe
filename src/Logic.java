@@ -1,32 +1,37 @@
-package src;
-
-import javax.swing.*;
+import java.util.List;
 
 public class Logic {
-    private int newPosition;
     private int symbol;
+    private Board board;
+    private Language language;
+    private InputAndOutput input;
+    private int symbol_x = 11;
+    private int symbol_o = 22;
 
-    private void startGame() {
-        Board board = new Board();
-        Language language = new Language();
-        InputAndOutput input = new InputAndOutput();
+    public void startGame() {
+        board = new Board();
+        language = new Language();
+        input = new InputAndOutput();
+
+        String lang = input.getLanguage(this.language.setLanguageMessage());
+        boolean isEnglish = "0".equals(lang);
+        this.language.setLanguageEnglish(isEnglish);
 
         playGame();
     }
 
     private void playGame() {
-    int x = 11;
-    int o = 22;
-    symbol = x;
-
+        symbol = symbol_x;
         board.printBoard();
-        while (!boardIsFull() || !gameWon()) {
+        while (!board.boardIsFull() || !gameWon()) {
 
-            language.turnChangesMessage();
-            newPosition = input.getNextMove();
+            System.out.println(language.turnChangesMessage());
+            int newPosition = input.getNextMove(language.getNextMoveMessage());
 
-            if(illegalEntry(newPosition))
-                language.invalidInputMessage();
+            if (illegalEntry(newPosition))
+                // TODO: add check if cell already has a symbol in it
+                // TODO: when there is an illegal entry OR the cell already has content, repeat input for same player
+                System.out.println(language.invalidInputMessage());
             else {
                 board.updateBoard(newPosition, symbol);
                 board.printBoard();
@@ -34,34 +39,42 @@ public class Logic {
             }
         }
 
-        if(gameWon())
-            language.outcomeWinMessage();
+        if (gameWon())
+            System.out.println(language.outcomeWinMessage());
         else
-            language.outcomeDrawMessage();
+            System.out.println(language.outcomeDrawMessage());
 
-        language.gameEndMessage();
 
-        }
-     private boolean illegalEntry(int newPosition){
-        if(newPosition > 8 || (board.get(newPosition) < 0 && (board.get(newPosition) > 8))
-            return true;
-     }
+        System.out.println(language.gameEndMessage());
 
-     private boolean gameWon(){
-        if(board.get(0) == board.get(1) == board.get(2) || board.get(3) == board.get(4) == board.get(5) || board.get(6) == board.get(7) == board.get(8)
-                || board.get(0) == board.get(3) == board.get(6) || board.get(1) == board.get(4) == board.get(7) || board.get(2) == board.get(5) == board.get(8)
-                || board.get(0) == board.get(4) == board.get(8) || board.get(2) == board.get(4) == board.get(6) )
-        return true;
-        else
-            return false;
-     }
+    }
 
-     private void changeSymbol(int currentSymbol){
+    private boolean illegalEntry(int newPosition) {
+        return newPosition > 8 || newPosition < 0;
+    }
+
+    private boolean gameWon() {
+        List<Integer> cells = board.getCells();
+        return
+                // check horizontal lines
+                ((cells.get(0) == cells.get(1)) && cells.get(0) == cells.get(2))
+                || ((cells.get(3) == cells.get(4)) && cells.get(3) == cells.get(5))
+                || ((cells.get(6) == cells.get(6)) && cells.get(6) == cells.get(8))
+                // check vertical lines
+                || ((cells.get(0) == cells.get(3)) && cells.get(0) == cells.get(6))
+                || ((cells.get(1) == cells.get(4)) && cells.get(1) == cells.get(7))
+                || ((cells.get(2) == cells.get(5)) && cells.get(2) == cells.get(8))
+                // check diagonals
+                || ((cells.get(0) == cells.get(4)) && cells.get(0) == cells.get(8))
+                || ((cells.get(2) == cells.get(4)) && cells.get(2) == cells.get(6));
+    }
+
+    private void changeSymbol(int currentSymbol) {
         int otherSymbol;
-        if(symbol == x)
-            symbol = o;
+        if (symbol == symbol_x)
+            symbol = symbol_o;
         else
-            symbol = x;
-     }
+            symbol = symbol_x;
+    }
 }
 
