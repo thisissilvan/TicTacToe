@@ -1,4 +1,4 @@
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Die Klasse Board stellt das Spielfeld zur Verfügung. Hier sind alle relevanten Methoden untergebracht um das
@@ -9,8 +9,8 @@ import java.util.List;
  */
 public class Board {
 
-    private InputAndOutput player = new InputAndOutput;
-    private List<Integer>;
+    private InputAndOutput player = new InputAndOutput();
+    private ArrayList<Integer> cells;
 
     /**
      * Der Konstruktor Board erstellt ein Spielfeld und füllt die Felder mit der
@@ -38,12 +38,12 @@ public class Board {
             cells.add(i);
         }
     }
-    public List<Integer> getCells()
+    public ArrayList<Integer> getCells()
     {
         return cells;
     }
 
-    public void setCells(List<Integer> cells)
+    public void setCells(ArrayList<Integer> cells)
     {
         this.cells = cells;
     }
@@ -67,7 +67,7 @@ public class Board {
                         " |  " + cells.get(3) + " | " + cells.get(4) + "  | " + cells.get(5) + "  |   \n" +
                         " |____|____|____|\n" +
                         " |  " + cells.get(6) + " | " + cells.get(7) + "  | " + cells.get(8) + "  |   \n" +
-                        " |____|____|____|");
+                        " |____|____|____|";
 
 
         return output;
@@ -109,6 +109,7 @@ public class Board {
     {
         System.out.println(createOutputString());
     }
+
 
 }
 
