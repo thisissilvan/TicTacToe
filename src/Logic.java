@@ -23,12 +23,14 @@ public class Logic {
     private void playGame() {
         symbol = symbol_x;
         board.printBoard();
-        while (!board.boardIsFull() || !gameWon()) {
+        while (!gameWon() && !board.boardIsFull()) {
 
             int newPosition = input.getNextMove(language.getNextMoveMessage());
-
-            do{
-                System.out.println(language.invalidInputMessage());
+            do {
+                if (illegalEntry(newPosition)) {
+                    System.out.println(language.invalidInputMessage());
+                    newPosition = input.getNextMove(language.getNextMoveMessage());
+                }
             } while(illegalEntry(newPosition));
 
             board.updateBoard(newPosition, symbol);
@@ -47,7 +49,8 @@ public class Logic {
     }
 
     private boolean illegalEntry(int newPosition) {
-        return newPosition > 8 || newPosition < 0;
+        List<Integer> cells = board.getCells();
+        return (cells.get(newPosition)>8 || newPosition > 8 || newPosition < 0);
     }
 
     private boolean gameWon() {
@@ -56,7 +59,7 @@ public class Logic {
                 // check horizontal lines
                 ((cells.get(0) == cells.get(1)) && cells.get(0) == cells.get(2))
                 || ((cells.get(3) == cells.get(4)) && cells.get(3) == cells.get(5))
-                || ((cells.get(6) == cells.get(6)) && cells.get(6) == cells.get(8))
+                || ((cells.get(6) == cells.get(7)) && cells.get(6) == cells.get(8))
                 // check vertical lines
                 || ((cells.get(0) == cells.get(3)) && cells.get(0) == cells.get(6))
                 || ((cells.get(1) == cells.get(4)) && cells.get(1) == cells.get(7))
