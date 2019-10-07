@@ -48,6 +48,7 @@ public class Board {
         this.cells = cells;
     }
 
+  
     public ArrayList<Integer> getField()
     {
         return cells;
@@ -56,9 +57,10 @@ public class Board {
     /**
      * Die Methode output produziert einen output-String, welcher das Spielfeld darstellt.
      */
-    public void createOutputString()
+    public String createOutputString()
     {
         String output =
+
                 " |----|----|----|\n" +
                         " |  " + cells.get(0) + " | " + cells.get(1) + "  | " + cells.get(2) + "  |   \n" +
                         " |____|____|____|\n" +
@@ -67,6 +69,8 @@ public class Board {
                         " |  " + cells.get(6) + " | " + cells.get(7) + "  | " + cells.get(8) + "  |   \n" +
                         " |____|____|____|");
 
+
+        return output;
     }
 
     /**
@@ -103,7 +107,7 @@ public class Board {
      */
     public void printBoard()
     {
-        System.out.println(output());
+        System.out.println(createOutputString());
     }
 
 }

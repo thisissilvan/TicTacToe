@@ -83,4 +83,14 @@ public class Language {
     public void setLanguageEnglish(boolean languageEnglish) {
         this.languageEnglish = languageEnglish;
     }
+
+    public String getNextMoveMessage() {
+        String message;
+        if(languageEnglish){
+            message = "Please inter a number in the range 0 to 8";
+        }else{
+            message = "Bitte eine Zahl von 0 bis 8 eingeben";
+        }
+        return message;
+    }
 }
