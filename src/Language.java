@@ -80,6 +80,19 @@ public class Language {
         return message;
     }
 
+    /**
+     * Im Falle das der Benutzer nicht mehr weiterspielen möchte, wird am Ende noch eine Dankeschön-Nachricht ausgegeben.
+     */
+    public String thankYouMessage(){
+        String message;
+        if(languageEnglish){
+            message = "Thank you very much for playing!";
+        }else{
+            message = "Danke viel Mals fürs spielen!";
+        }
+        return message;
+    }
+
     public void setLanguageEnglish(boolean languageEnglish) {
         this.languageEnglish = languageEnglish;
     }
