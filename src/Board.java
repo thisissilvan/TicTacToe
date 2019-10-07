@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -6,12 +5,12 @@ import java.util.List;
  * Spielfeld zu modellieren.
  *
  * @author Silvan Luethy
- * @version 2019_10_06
+ * @version 2019_10_07
  */
 public class Board {
 
-    private InputAndOutput player = new InputAndOutput();
-    private List<Integer> cells = new ArrayList<>();
+    private InputAndOutput player = new InputAndOutput;
+    private List<Integer>;
 
     /**
      * Der Konstruktor Board erstellt ein Spielfeld und füllt die Felder mit der
@@ -26,34 +25,31 @@ public class Board {
      */
     public Board()
     {
+        cells = new ArrayList<>();
+        initialiseBoard();
+    }
+
+    /**
+     * Mit dieser Methode wird ein neues Spielfeld initialisiert.
+     */
+    public void initialiseBoard()
+    {
         for (int i = 0; i <= 8; i++) {
             cells.add(i);
         }
     }
-
-    /**
-     * Getter Methode der Klasse Board.
-     * @return cells
-     */
     public List<Integer> getCells()
     {
         return cells;
     }
 
-    /**
-     * Setter Methode der Klasse Board.
-     * @param cells
-     */
     public void setCells(List<Integer> cells)
     {
         this.cells = cells;
     }
 
-    /**
-     * Diese Methode gibt die Felder als ArrayList zurück.
-     * @return ArrayList
-     */
-    public List<Integer> getField()
+  
+    public ArrayList<Integer> getField()
     {
         return cells;
     }
@@ -64,13 +60,15 @@ public class Board {
     public String createOutputString()
     {
         String output =
-        " |----|----|----|\n" +
-        " |  " + cells.get(0) + " | " + cells.get(1) + "  | " + cells.get(2) + "  |   \n" +
-        " |____|____|____|\n" +
-        " |  " + cells.get(3) + " | " + cells.get(4) + "  | " + cells.get(5) + "  |   \n" +
-        " |____|____|____|\n" +
-        " |  " + cells.get(6) + " | " + cells.get(7) + "  | " + cells.get(8) + "  |   \n" +
-        " |____|____|____|";
+
+                " |----|----|----|\n" +
+                        " |  " + cells.get(0) + " | " + cells.get(1) + "  | " + cells.get(2) + "  |   \n" +
+                        " |____|____|____|\n" +
+                        " |  " + cells.get(3) + " | " + cells.get(4) + "  | " + cells.get(5) + "  |   \n" +
+                        " |____|____|____|\n" +
+                        " |  " + cells.get(6) + " | " + cells.get(7) + "  | " + cells.get(8) + "  |   \n" +
+                        " |____|____|____|");
+
 
         return output;
     }
@@ -85,9 +83,9 @@ public class Board {
         boolean isFull = false;
 
         if((cells.get(0) != 0) && (cells.get(1) != 1) && (cells.get(2) != 2) &&
-           (cells.get(3) != 3) && (cells.get(4) != 4) && (cells.get(5) != 5) &&
-           (cells.get(6) != 6) && (cells.get(7) != 7) && (cells.get(8) != 8)) {
-           isFull = true;
+                (cells.get(3) != 3) && (cells.get(4) != 4) && (cells.get(5) != 5) &&
+                (cells.get(6) != 6) && (cells.get(7) != 7) && (cells.get(8) != 8)) {
+            isFull = true;
         }
 
         return isFull;
