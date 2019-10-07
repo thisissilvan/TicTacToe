@@ -33,6 +33,10 @@ out/
 
 # Generated files
 .idea/**/contentModel.xml
+.idea/**/misc.xml
+.idea/**/modules.xml
+.idea/**/vcs.xml
+.idea/**/workspace.xml
 
 # Sensitive or high-churn files
 .idea/**/dataSources/
