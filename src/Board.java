@@ -25,8 +25,8 @@ public class Board {
      */
     public Board()
     {
-       cells = new ArrayList<>();
-       initialiseBoard();
+        cells = new ArrayList<>();
+        initialiseBoard();
     }
 
     /**
@@ -59,13 +59,13 @@ public class Board {
     public void createOutputString()
     {
         String output =
-        " |----|----|----|\n" +
-        " |  " + cells.get(0) + " | " + cells.get(1) + "  | " + cells.get(2) + "  |   \n" +
-        " |____|____|____|\n" +
-        " |  " + cells.get(3) + " | " + cells.get(4) + "  | " + cells.get(5) + "  |   \n" +
-        " |____|____|____|\n" +
-        " |  " + cells.get(6) + " | " + cells.get(7) + "  | " + cells.get(8) + "  |   \n" +
-        " |____|____|____|");
+                " |----|----|----|\n" +
+                        " |  " + cells.get(0) + " | " + cells.get(1) + "  | " + cells.get(2) + "  |   \n" +
+                        " |____|____|____|\n" +
+                        " |  " + cells.get(3) + " | " + cells.get(4) + "  | " + cells.get(5) + "  |   \n" +
+                        " |____|____|____|\n" +
+                        " |  " + cells.get(6) + " | " + cells.get(7) + "  | " + cells.get(8) + "  |   \n" +
+                        " |____|____|____|");
 
     }
 
@@ -79,9 +79,9 @@ public class Board {
         boolean isFull = false;
 
         if((cells.get(0) != 0) && (cells.get(1) != 1) && (cells.get(2) != 2) &&
-           (cells.get(3) != 3) && (cells.get(4) != 4) && (cells.get(5) != 5) &&
-           (cells.get(6) != 6) && (cells.get(7) != 7) && (cells.get(8) != 8)) {
-           isFull = true;
+                (cells.get(3) != 3) && (cells.get(4) != 4) && (cells.get(5) != 5) &&
+                (cells.get(6) != 6) && (cells.get(7) != 7) && (cells.get(8) != 8)) {
+            isFull = true;
         }
 
         return isFull;
