@@ -13,14 +13,10 @@ public class Board {
     private ArrayList<Integer> cells;
 
     /**
-     * Der Konstruktor Board erstellt ein Spielfeld und füllt die Felder mit der
-     * Feldbezeichnung auf.
+     * Der Konstruktor Board erstellt eine ArrayList unbekannter Grösse. Durch das Aufrufen der Methode
+     * initialiseBoard() wird ein Feld der Grösse 3x3 erstellt.
      *
-     * Ein Feld besteht aus 9 leeren Feldern. Der Einfachheit halber haben die Felder
-     * denselben Namen wie die jeweiligen Indexe der ArrayList.
-     *
-     * Sobald ein Spielzug gespielt wird, soll der Inhalt des Feldes mit der Bezeichnung des aktuellen Spielers,
-     * der aktuellen Spielerin überschrieben werden.
+     * Der Einfachheit halber haben die Felder denselben Namen wie die jeweiligen Indexe der ArrayList.
      *
      */
     public Board()
@@ -30,7 +26,7 @@ public class Board {
     }
 
     /**
-     * Mit dieser Methode wird ein neues Spielfeld initialisiert.
+     * Mit dieser Methode wird ein Spielfeld der Grösse 3x3 als ArrayList erstellt.
      */
     public void initialiseBoard()
     {
@@ -117,14 +113,15 @@ public class Board {
         } else {
             output = output + " " + cells.get(8) + " |\n" + " |____|____|____|\n" + " |____|____|____|";
         }
-
         return output;
     }
 
     /**
      * Diese Methode prüft, ob das Spielfeld belegt ist oder nicht. Der Rückgabewert ist
      * false, solange es noch freie Felder auf dem Spielfeld hat.
-     * @return boolean isFull
+     *
+     * @return Ein boolean, welcher signalisiert, ob das Spielfeld voll belegt ist oder nicht
+     *         false bedeutet, dass es noch freie Felder hat, true bedeutet, dass alle Felder belegt sind.
      */
     public boolean boardIsFull()
     {
@@ -141,10 +138,7 @@ public class Board {
 
 
     /**
-     * Mit dieser Methode kann das Spielfeld aktuelisiert werden.
-     *
-     * Es muss die ursprüngliche Position und das zu spielende Zeichen angegeben werden. Mit updateBoard
-     * wird in der ArrayList das alte Zeichen gesucht und durch das zu spielende Zeichen ersetzt.
+     * Die Methode updateBoard ersetzt ein freies Feld durch die Nummer des Spielers, welcher einen Spielzug macht.
      */
     public void updateBoard(int position, int zeichen)
     {
