@@ -56,19 +56,67 @@ public class Board {
 
     /**
      * Die Methode output produziert einen output-String, welcher das Spielfeld darstellt.
+     * Es wird unterschieden, ob das Feld besetzt ist oder nicht, dementsprechend wird der String angepasst.
+     *
+     * @return Spielfeld mit 9 Feldern
      */
     public String createOutputString()
     {
-        String output =
+        String output = " |----|----|----|\n";
 
-                " |----|----|----|\n" +
-                        " | " + cells.get(0) + " | " + cells.get(1) + " | " + cells.get(2) + " |   \n" +
-                        " |____|____|____|\n" +
-                        " | " + cells.get(3) + " | " + cells.get(4) + " | " + cells.get(5) + " |   \n" +
-                        " |____|____|____|\n" +
-                        " | " + cells.get(6) + " | " + cells.get(7) + " | " + cells.get(8) + " |   \n" +
-                        " |____|____|____|";
+        if(cells.get(0) == 0){
+            output = output + " |  " + cells.get(0) + " |";;
+        } else {
+            output = output + " | " + cells.get(0) + " |";
+        }
 
+        if(cells.get(1) == 1){
+            output = output + "  " + cells.get(1) + " |";
+        } else {
+            output = output + " " + cells.get(1) + " |";
+        }
+
+        if (cells.get(2) == 2){
+            output = output + "  " + cells.get(2) + " |\n" + " |____|____|____|\n";
+        } else {
+            output = output + " " + cells.get(2) + " |\n" + " |____|____|____|\n";
+        }
+
+        if(cells.get(3) == 3){
+            output = output + " |  " + cells.get(3) + " |";;
+        } else {
+            output = output + " | " + cells.get(3) + " |";
+        }
+
+        if(cells.get(4) == 4){
+            output = output + "  " + cells.get(4) + " |";
+        } else {
+            output = output + " " + cells.get(4) + " |";
+        }
+
+        if (cells.get(5) == 5){
+            output = output + "  " + cells.get(5) + " |\n" + " |____|____|____|\n";
+        } else {
+            output = output + " " + cells.get(5) + " |\n" + " |____|____|____|\n";
+        }
+
+        if(cells.get(6) == 6){
+            output = output + " |  " + cells.get(6) + " |";;
+        } else {
+            output = output + " | " + cells.get(6) + " |";
+        }
+
+        if(cells.get(7) == 7){
+            output = output + "  " + cells.get(7) + " |";
+        } else {
+            output = output + " " + cells.get(7) + " |";
+        }
+
+        if (cells.get(8) == 8){
+            output = output + "  " + cells.get(8) + " |\n" + " |____|____|____|\n" + " |____|____|____|";
+        } else {
+            output = output + " " + cells.get(8) + " |\n" + " |____|____|____|\n" + " |____|____|____|";
+        }
 
         return output;
     }
@@ -90,6 +138,7 @@ public class Board {
 
         return isFull;
     }
+
 
     /**
      * Mit dieser Methode kann das Spielfeld aktuelisiert werden.
