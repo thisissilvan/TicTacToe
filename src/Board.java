@@ -13,14 +13,10 @@ public class Board {
     private ArrayList<Integer> cells;
 
     /**
-     * Der Konstruktor Board erstellt ein Spielfeld und füllt die Felder mit der
-     * Feldbezeichnung auf.
+     * Der Konstruktor Board erstellt eine ArrayList unbekannter Grösse. Durch das Aufrufen der Methode
+     * initialiseBoard() wird ein Feld der Grösse 3x3 erstellt.
      *
-     * Ein Feld besteht aus 9 leeren Feldern. Der Einfachheit halber haben die Felder
-     * denselben Namen wie die jeweiligen Indexe der ArrayList.
-     *
-     * Sobald ein Spielzug gespielt wird, soll der Inhalt des Feldes mit der Bezeichnung des aktuellen Spielers,
-     * der aktuellen Spielerin überschrieben werden.
+     * Der Einfachheit halber haben die Felder denselben Namen wie die jeweiligen Indexe der ArrayList.
      *
      */
     public Board()
@@ -30,7 +26,7 @@ public class Board {
     }
 
     /**
-     * Mit dieser Methode wird ein neues Spielfeld initialisiert.
+     * Mit dieser Methode wird ein Spielfeld der Grösse 3x3 als ArrayList erstellt.
      */
     public void initialiseBoard()
     {
@@ -56,27 +52,76 @@ public class Board {
 
     /**
      * Die Methode output produziert einen output-String, welcher das Spielfeld darstellt.
+     * Es wird unterschieden, ob das Feld besetzt ist oder nicht, dementsprechend wird der String angepasst.
+     *
+     * @return Spielfeld mit 9 Feldern
      */
     public String createOutputString()
     {
-        String output =
+        String output = " |----|----|----|\n";
 
-                " |----|----|----|\n" +
-                        " | " + cells.get(0) + " | " + cells.get(1) + " | " + cells.get(2) + " |   \n" +
-                        " |____|____|____|\n" +
-                        " | " + cells.get(3) + " | " + cells.get(4) + " | " + cells.get(5) + " |   \n" +
-                        " |____|____|____|\n" +
-                        " | " + cells.get(6) + " | " + cells.get(7) + " | " + cells.get(8) + " |   \n" +
-                        " |____|____|____|";
+        if(cells.get(0) == 0){
+            output = output + " |  " + cells.get(0) + " |";;
+        } else {
+            output = output + " | " + cells.get(0) + " |";
+        }
 
+        if(cells.get(1) == 1){
+            output = output + "  " + cells.get(1) + " |";
+        } else {
+            output = output + " " + cells.get(1) + " |";
+        }
 
+        if (cells.get(2) == 2){
+            output = output + "  " + cells.get(2) + " |\n" + " |____|____|____|\n";
+        } else {
+            output = output + " " + cells.get(2) + " |\n" + " |____|____|____|\n";
+        }
+
+        if(cells.get(3) == 3){
+            output = output + " |  " + cells.get(3) + " |";;
+        } else {
+            output = output + " | " + cells.get(3) + " |";
+        }
+
+        if(cells.get(4) == 4){
+            output = output + "  " + cells.get(4) + " |";
+        } else {
+            output = output + " " + cells.get(4) + " |";
+        }
+
+        if (cells.get(5) == 5){
+            output = output + "  " + cells.get(5) + " |\n" + " |____|____|____|\n";
+        } else {
+            output = output + " " + cells.get(5) + " |\n" + " |____|____|____|\n";
+        }
+
+        if(cells.get(6) == 6){
+            output = output + " |  " + cells.get(6) + " |";;
+        } else {
+            output = output + " | " + cells.get(6) + " |";
+        }
+
+        if(cells.get(7) == 7){
+            output = output + "  " + cells.get(7) + " |";
+        } else {
+            output = output + " " + cells.get(7) + " |";
+        }
+
+        if (cells.get(8) == 8){
+            output = output + "  " + cells.get(8) + " |\n" + " |____|____|____|\n" + " |____|____|____|";
+        } else {
+            output = output + " " + cells.get(8) + " |\n" + " |____|____|____|\n" + " |____|____|____|";
+        }
         return output;
     }
 
     /**
      * Diese Methode prüft, ob das Spielfeld belegt ist oder nicht. Der Rückgabewert ist
      * false, solange es noch freie Felder auf dem Spielfeld hat.
-     * @return boolean isFull
+     *
+     * @return Ein boolean, welcher signalisiert, ob das Spielfeld voll belegt ist oder nicht
+     *         false bedeutet, dass es noch freie Felder hat, true bedeutet, dass alle Felder belegt sind.
      */
     public boolean boardIsFull()
     {
@@ -91,11 +136,9 @@ public class Board {
         return isFull;
     }
 
+
     /**
-     * Mit dieser Methode kann das Spielfeld aktuelisiert werden.
-     *
-     * Es muss die ursprüngliche Position und das zu spielende Zeichen angegeben werden. Mit updateBoard
-     * wird in der ArrayList das alte Zeichen gesucht und durch das zu spielende Zeichen ersetzt.
+     * Die Methode updateBoard ersetzt ein freies Feld durch die Nummer des Spielers, welcher einen Spielzug macht.
      */
     public void updateBoard(int position, int zeichen)
     {
