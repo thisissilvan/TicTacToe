@@ -106,4 +106,10 @@ public class Language {
         }
         return message;
     }
+
+    public String thankYouMessage() {
+        String message;
+        message= "Thanks";
+        return message;
+    }
 }

@@ -13,6 +13,11 @@ public class InputAndOutput {
         String result = getString();
         return Integer.parseInt(result);
     }
+    public int getNextGame() {
+        String result = getString();
+        return Integer.parseInt(result);
+    }
+
 
     public String getLanguage(String message) {
         System.out.println(message);
