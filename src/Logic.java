@@ -69,11 +69,16 @@ public class Logic {
         System.out.println(language.gameEndMessage());
 
         if(input.getNextGame() == 0)
-            startGame();
+            restartGame();
         else
             System.out.println(language.thankYouMessage());
     }
 
+    private void restartGame() {
+        board = new Board();
+        input = new InputAndOutput();
+        playGame();
+    }
 
     private boolean illegalEntry(int newPosition) {
         List<Integer> cells = board.getCells();
