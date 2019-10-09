@@ -5,7 +5,7 @@ import java.util.ArrayList;
  * Spielfeld zu modellieren.
  *
  * @author Silvan Luethy
- * @version 2019_10_07
+ * @version 2019_10_09
  */
 public class Board {
 
@@ -109,7 +109,6 @@ public class Board {
     {
         System.out.println(createOutputString());
     }
-
 
 }
 
