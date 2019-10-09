@@ -135,10 +135,16 @@ public class Board {
 
         return isFull;
     }
-
-
+    
     /**
-     * Die Methode updateBoard ersetzt ein freies Feld durch die Nummer des Spielers, welcher einen Spielzug macht.
+     * Die Methode updateBoard ersetzt ein freies Feld durch die Nummer der spielenden Person,
+     * welche einen Spielzug macht.
+     *
+     * Personen, welche das Spiel spielen haben entweder die Bezeichnung 11 oder 22, diese Werte werden
+     * als int-Wert gespeichert.
+     *
+     * @param position Die Position, an welcher das leere Feld ersetzt werden soll.
+     * @param zeichen Das Zeichen der Person, welche an der Reihe ist, entweder 11 oder 22.
      */
     public void updateBoard(int position, int zeichen)
     {
