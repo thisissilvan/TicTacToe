@@ -58,13 +58,13 @@ public class Logic {
             board.printBoard();
             changeSymbol(symbol);
 
-            System.out.println(language.turnChangesMessage());
+            if (gameWon())
+                System.out.println(language.outcomeWinMessage());
+            else if (board.boardIsFull())
+                System.out.println(language.outcomeDrawMessage());
+            else
+                System.out.println(language.turnChangesMessage());
         }
-
-        if (gameWon())
-            System.out.println(language.outcomeWinMessage());
-        else
-            System.out.println(language.outcomeDrawMessage());
 
         System.out.println(language.gameEndMessage());
 
@@ -82,7 +82,7 @@ public class Logic {
 
     private boolean illegalEntry(int newPosition) {
         List<Integer> cells = board.getCells();
-        return (cells.get(newPosition)>8 || newPosition > 8 || newPosition < 0);
+        return (newPosition > 8 || newPosition < 0 || cells.get(newPosition)>8);
     }
 
     /**
