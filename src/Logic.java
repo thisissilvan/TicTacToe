@@ -66,9 +66,7 @@ public class Logic {
                 System.out.println(language.turnChangesMessage());
         }
 
-        System.out.println(language.gameEndMessage());
-
-        if(input.getNextGame() == 0)
+        if(input.getNextGame(language.gameEndMessage()) == 0)
             restartGame();
         else
             System.out.println(language.thankYouMessage());
