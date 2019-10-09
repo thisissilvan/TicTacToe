@@ -60,7 +60,7 @@ public class Board {
         String output = " |----|----|----|\n";
 
         if(cells.get(0) == 0){
-            output = output + " |  " + cells.get(0) + " |";;
+            output = output + " |  " + cells.get(0) + " |";
         } else {
             output = output + " | " + cells.get(0) + " |";
         }
@@ -78,7 +78,7 @@ public class Board {
         }
 
         if(cells.get(3) == 3){
-            output = output + " |  " + cells.get(3) + " |";;
+            output = output + " |  " + cells.get(3) + " |";
         } else {
             output = output + " | " + cells.get(3) + " |";
         }
@@ -96,7 +96,7 @@ public class Board {
         }
 
         if(cells.get(6) == 6){
-            output = output + " |  " + cells.get(6) + " |";;
+            output = output + " |  " + cells.get(6) + " |";
         } else {
             output = output + " | " + cells.get(6) + " |";
         }
