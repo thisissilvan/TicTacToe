@@ -44,7 +44,6 @@ public class Board {
         this.cells = cells;
     }
 
-  
     public ArrayList<Integer> getField()
     {
         return cells;
@@ -109,9 +108,9 @@ public class Board {
         }
 
         if (cells.get(8) == 8){
-            output = output + "  " + cells.get(8) + " |\n" + " |____|____|____|\n" + " |____|____|____|";
+            output = output + "  " + cells.get(8) + " |\n" + " |____|____|____|\n";
         } else {
-            output = output + " " + cells.get(8) + " |\n" + " |____|____|____|\n" + " |____|____|____|";
+            output = output + " " + cells.get(8) + " |\n" + " |____|____|____|\n";
         }
         return output;
     }
@@ -135,7 +134,7 @@ public class Board {
 
         return isFull;
     }
-    
+
     /**
      * Die Methode updateBoard ersetzt ein freies Feld durch die Nummer der spielenden Person,
      * welche einen Spielzug macht.
