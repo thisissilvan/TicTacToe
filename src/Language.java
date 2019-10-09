@@ -20,7 +20,8 @@ public class Language {
      * Diese Methode wird am Anfang des Spiels aufgerufen umd nach dem Sprachwunsch des Benutzers zufragen.
      */
     public String setLanguageMessage() {
-        return "Willkommen! Bitte geben Sie [1] ein für Deutsch. Welcome! Please enter [0] for english.";
+        return "Willkommen! Bitte geben Sie [0] ein für Englisch und jede andere Nummer für Deutsch.\n" +
+                "Welcome! Please enter [0] for English and any other number for German.";
     }
 
     /**
@@ -95,9 +96,9 @@ public class Language {
     public String gameEndMessage() {
         String message;
         if (languageEnglish) {
-            message = "The game has ended, would you like to continue playing? No [1] Yes [0]";
+            message = "The game has ended. To continue playing press [0] and exit with any number.";
         } else {
-            message = "Das Spiel ist zu ende, möchten Sie weiter spielen? Nein [1] Ja [0]";
+            message = "Das Spiel ist zu ende. Um weiterzuspielen drücken Sie [0] und jede andere Nummer, um das Spiel zu beenden.";
         }
         return message;
     }
