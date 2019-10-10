@@ -6,6 +6,7 @@ import java.util.ArrayList;
  *
  * @author Silvan Luethy
  * @version 2019_10_09
+ * Modul: Software-Projekt 1, M. Mürner, Dr D. Ehrismann
  */
 public class Board {
 
